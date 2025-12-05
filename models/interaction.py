@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, ForeignKey, String, Date, Numeric
 from sqlalchemy.orm import relationship
-from ..database import Base
+from database import Base
 from datetime import date
 
 class UserAnimalInteraction(Base):
