@@ -56,7 +56,6 @@ def list_animals(session):
 def adopt_or_donate(session):
     list_users(session)
     uid = input("Enter user id: ").strip()
-    # choose animal
     list_animals(session)
     aid = input("Enter animal id: ").strip()
     action = input("Type 'adopt' or 'donation': ").strip().lower()
@@ -68,7 +67,6 @@ def adopt_or_donate(session):
         except ValueError:
             print("Invalid amount; skipping donation amount.")
             amount = None
-    # validate
     try:
         uid = int(uid); aid = int(aid)
     except ValueError:
@@ -87,7 +85,6 @@ def adopt_or_donate(session):
         amount=amount
     )
     session.add(interaction)
-    # optionally update animal status if adopted
     if action == "adopt":
         a.status = "adopted"
     session.commit()

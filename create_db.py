@@ -1,5 +1,5 @@
 from database import engine, Base
-import models  # This ensures all model modules are imported so SQLAlchemy sees them
+import models  
 
 def init_db():
     Base.metadata.create_all(engine)

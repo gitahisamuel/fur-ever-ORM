@@ -10,9 +10,9 @@ class UserAnimalInteraction(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     animal_id = Column(Integer, ForeignKey("animals.id"), nullable=False)
 
-    interaction_type = Column(String, nullable=False)       # e.g. "donation", "adopt"
+    interaction_type = Column(String, nullable=False)    
     interaction_date = Column(Date, default=date.today, nullable=False)
-    amount = Column(Numeric(10, 2), nullable=True)          # nullable — only used for donations perhaps
+    amount = Column(Numeric(10, 2), nullable=True)        
 
     user = relationship("User", back_populates="interactions")
     animal = relationship("Animal", back_populates="interactions")
